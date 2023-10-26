@@ -56,7 +56,6 @@ h1 {
     max-height: 110px;
     border: 1px solid black;
     border-radius: .6rem;
-    background-color: #14A06F;
     color: #FFFFFF;
     position: relative;
     overflow: hidden;
@@ -110,8 +109,6 @@ h1 {
 }
 .type li {
     border-radius: 3px;
-    background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
-    background-color: #9bcc50;
     font-family: 'Roboto', sans-serif, monospace;
     line-height: 1.5;
     letter-spacing: 1px;
@@ -123,4 +120,172 @@ h1 {
     display: flex; 
     align-items: center; 
     justify-content: center; 
+}
+
+/* Estilos para os tipos de Pokémon */
+.pokemon.grama {
+    background-color: #9ACD32; /* Verde claro */
+}
+
+.type .grama {
+    background-color: #45bc45; /* Verde pastel */
+}
+
+.pokemon.veneno {
+    background-color: #9370DB; /* Azul violeta */
+}
+
+.type .veneno {
+    background-color: #b544e6; /* Lilás pastel */
+}
+
+.pokemon.fogo {
+    background-color: #FF6347; /* Vermelho claro */
+}
+
+.type .fogo {
+    background-color: #ff3300; /* Rosa pastel */
+}
+
+.pokemon.voador {
+    background-color: lightcyan; /* Azul claro */
+}
+
+.type .voador {
+    background-color: #ffffff; /* Verde pastel azulado */
+    color: gray;
+}
+
+.pokemon.agua {
+    background-color: #87CEEB; /* Azul céu claro */
+}
+
+.type .agua {
+    background-color: #3c59b1; /* Azul pastel claro */
+}
+
+.pokemon.inseto {
+    background-color: #98FB98; /* Verde claro */
+}
+
+.type .inseto {
+    background-color: #0f0; /* Verde pastel azulado */
+}
+
+.pokemon.normal {
+    background-color: #e1e0e0; /* Cinza claro */
+}
+
+.type .normal {
+    background-color: #b3afaf; /* Cinza pastel */
+}
+
+.pokemon.terra {
+    background-color: #DEB887; /* Marrom claro */
+}
+
+.type .terra {
+    background-color: #bb7e33; /* Marrom pastel */
+}
+
+.pokemon.psicico {
+    background-color: #FFC0CB; /* Rosa claro */
+}
+
+.type .psicico {
+    background-color: #FFD1DC; /* Rosa pastel */
+}
+
+.pokemon.lutador {
+    background-color: #fc823c; /* Laranja claro */
+}
+
+.type .lutador {
+    background-color: #fcb634; /* Pêssego pastel */
+}
+
+.pokemon.fada {
+    background-color: #FF69B4; /* Rosa profundo */
+}
+
+.type .fada {
+    background-color: #FF1493; /* Rosa claro */
+}
+
+
+.pokemon.eletrico {
+    background-color: rgb(255, 255, 98); /* Amarelo claro */
+}
+
+.type .eletrico {
+    background-color: rgb(255, 225, 0); /* Amarelo pastel */
+}
+
+.pokemon.aco {
+    background-color: #96b1b3; /* Cinza escuro */
+}
+
+.type .aco {
+    background-color: #6a898a; /* Cinza claro */
+}
+
+.pokemon.fantasma {
+    background-color: #8A2BE2; /* Roxo escuro */
+}
+
+.type .fantasma {
+    background-color: #9370DB; /* Roxo pastel */
+}
+
+.pokemon.rocha {
+    background-color: #A9A9A9; /* Cinza escuro */
+}
+
+.type .rocha {
+    background-color: #C0C0C0; /* Cinza claro */
+}
+
+.pokemon.gelo {
+    background-color: #6fb6fc; /* Azul claro */
+}
+
+.type .gelo {
+    background-color: #0080ff; /* Verde pastel azulado */
+}
+
+.pokemon.dragao {
+    background-color: #FFA500; /* Laranja claro */
+}
+
+.type .dragao {
+    background-color: #FFD700; /* Amarelo intenso */
+}
+
+.pokemon.noturno {
+    background-color: #696969; /* Cinza escuro */
+}
+
+.type .noturno {
+    background-color: #808080; /* Cinza claro */
+}
+.pokemon.pedra {
+    background-color: #d6d6d6; /* Cinza escuro */
+}
+
+.type .pedra {
+    background-color: #8d8c8c; /* Cinza claro */
+}
+.pokemon.psiquico {
+    background-color: #9e6885; /* Rosa profundo */
+}
+
+.type .psiquico {
+    background-color: #ab3570; /* Rosa claro */
+}
+.pokemon.sombrio {
+    background-color: #542c43; /* Rosa profundo */
+}
+
+.type .sombrio {
+    background-color: #590133; /* Rosa claro */
 }
