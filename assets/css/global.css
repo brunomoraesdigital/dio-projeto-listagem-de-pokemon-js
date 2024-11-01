@@ -1,24 +1,18 @@
 * {
-    font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-}
-
-body {
-    background-color: #f6f8fc;
-}
-
-.content {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
-    background-color: #fff;
-}
-
-@media screen and (min-width: 992px) {
-    .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
-    }
-}
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    text-decoration: none;
+    /*user-select: none;*/
+    outline: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+  }
+  a:link {text-decoration: none;color: #fff;}
+  a:visited {text-decoration: none; color: #fff;}
+  a:hover {text-decoration: none;color: #fff;}
+  a:active {text-decoration: none;color: #fff;}
+  a:focus {text-decoration: none;color: #fff;}
