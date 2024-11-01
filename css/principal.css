@@ -1,11 +1,14 @@
 html {
     width: 100vw;
     height: 100vh;
+    font-size: 16pz;
+    overflow: hidden;
 }
 body {
     width: 100%;
     height: 100%;
     position: fixed;
+    overflow: hidden;
 }
 main {
     width: 100%;
@@ -13,16 +16,33 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.pokedex {
-    height: 350px;
-    width: 500px;
-    display: flex;
-    position: relative;
-    z-index: 1;
+    /*overflow: hidden;*/ /* Evita barras de rolagem ao escalar o conteúdo */
+    /*transform-origin: center;*/ /* Mantém o centro como ponto de escala para centralização */
 }
 
-.lado_esquerdo {
+/* Manter tamanho fixo do elemento e escalar para telas menores */
+.pokedex {
+    height: 70vh; /* Adaptado para viewport */
+    width: 55vw; /* Largura proporcional à viewport */
+    max-width: 500px; /* Limite de tamanho máximo */
+    max-height: 350px; /* Limite de altura máxima */
+    min-width: 500px; /* Limite de tamanho mínimo */
+    min-height: 350px; /* Limite de altura mínima */
+    display: flex;
+    position: relative;
+    z-index: 1; /* Garante que a Pokédex fique acima de outros elementos */
+}
+@media (max-width: 768px) { main { transform: scale(0.8); } } /* Ajuste para tablets e pequenos laptops */
+@media (max-width: 480px) { main { transform: scale(0.7); } } /* Encaixe perfeito para smartphones */
+@media (max-width: 360px) { main { transform: scale(0.6); } } /* Adaptado para smartphones compactos */
+@media (max-width: 320px) { main { transform: scale(0.5); } } /* Para os menores dispositivos móveis */
+@media (max-width: 260px) { main { transform: scale(0.4); } } /* Visualização ideal para smartwatches grandes */
+@media (max-width: 210px) { main { transform: scale(0.3); } } /* Compacto para smartwatches médios */
+@media (max-width: 160px) { main { transform: scale(0.2); } } /* Visualização mínima para smartwatches pequenos */
+@media (max-width: 110px) { main { transform: scale(0.1); } } /* Último ajuste possível para telas ultra compactas */
+
+
+    .lado_esquerdo {
     width: 225px;
     height: 350px;
     background-color: red;
@@ -109,15 +129,84 @@ main {
     justify-content:space-evenly;
 }
 
-.visor_a, .controle_b {
+.tela_a, .controle_b {
     width: 80%;
     height: 55%;
     border: 1px solid black;
     z-index: 100;
 }
 
-.visor_b, .controle_a {
+.tela_b, .controle_a {
     width: 80%;
     height: 35%;
     border: 1px solid black;
+}
+.tela_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.moldura_visor {
+    width: 170px;
+    height: 170px;
+    background-color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 155px);
+    position: relative;
+}
+.moldura_visor_topo {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+.moldura_visor_base {
+    width: 100%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.visor_pokemon {
+    width: 80%;
+    height: 80%;
+    background-color: darkgray;
+    border-radius: 3% 3% 3% 3%;
+}
+.led_mold_top_1, .led_mold_top_2  {
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border: 1px solid orangered;
+    border-radius: 15px;
+    margin-right: 10px;
+}
+.led_mold_base  {
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border: 1px solid orangered;
+    border-radius: 15px;
+    margin-left: 17px;
+}
+.icon_hamburguer {
+    width: 15px;
+    height: 15px;
+    margin-right: 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.line {
+    width: 100%; 
+    height: 2px; 
+    border-radius: 4px; 
+    background-color: rgba(0,0,0,0.8);
 }
