@@ -183,7 +183,7 @@ main {
     width: 7px;
     height: 7px;
     background-color: red;
-    border: 1px solid orangered;
+    border: 1px groove orangered;
     border-radius: 15px;
     margin-right: 10px;
 }
@@ -191,7 +191,7 @@ main {
     width: 10px;
     height: 10px;
     background-color: red;
-    border: 1px solid orangered;
+    border: 1px groove orangered;
     border-radius: 15px;
     margin-left: 17px;
 }
@@ -210,3 +210,110 @@ main {
     border-radius: 4px; 
     background-color: rgba(0,0,0,0.8);
 }
+.controle_a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.controle_a_esq {
+    background-color: antiquewhite;
+    height: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+} 
+.controle_a_dir {
+    background-color: pink;
+    height: 100%;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.controle_a_cen {
+    background-color: aquamarine;
+    height: 100%;
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 
+.controle_a_cen_top {
+    background-color: gold;
+    width: 100%;
+    flex: 2;
+}
+.controle_a_cen_bas {
+    background-color:lawngreen;
+    width: 100%;
+    flex: 3;
+}
+.bt_circulo {
+    width: 25px;
+    height: 25px;
+    background-color:rgb(37, 43, 43);
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px black;
+}
+
+#bt_direcional {
+    position: relative;
+    background-color: cornflowerblue;
+    width: 55px;
+    height: 55px;
+  }
+  
+  #bt_direcional div {
+    position: absolute;
+    background-color: #333;
+  }
+  
+  .bt_dir_up {
+    width: 17px;
+    height: 22px;
+    top: -1px;        
+    left: 19px;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+  
+  .bt_dir_down {
+    width: 17px;
+    height: 22px;
+    bottom: -1px;     
+    left: 19px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  
+  .bt_dir_left {
+    width: 22px;
+    height: 17px;
+    top: 19px;
+    left: -1px;        
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+  }
+  
+  .bt_dir_right {
+    width: 22px;
+    height: 17px;
+    top: 19px;
+    right: -1px;       
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  }
+  
+  .bt_dir_center {
+    width: 17px;
+    height: 17px;
+    top: 19px;
+    left: 19px;
+    background-color: #666;
+  }
+   
+
+  
