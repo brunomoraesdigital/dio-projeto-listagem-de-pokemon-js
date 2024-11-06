@@ -42,7 +42,7 @@ main {
 @media (max-width: 110px) { main { transform: scale(0.1); } } /* Último ajuste possível para telas ultra compactas */
 
 
-    .lado_esquerdo {
+    .ladoEsquerdo {
     width: 225px;
     height: 350px;
     background-color: red;
@@ -51,7 +51,7 @@ main {
     z-index: 2;
     border-radius: 0 0 0 15px;
 }
-.lado_direito {
+.ladoDireito {
     width: 250px;
     height: 350px;
     background-color: red;
@@ -122,42 +122,42 @@ main {
     box-shadow: -5px 0px 15px rgba(139, 0, 0, 0.1),  5px 0px 15px rgba(139, 0, 0, 0.1); 
 }
 
-.lado_direito, .lado_esquerdo {
+.ladoDireito, .ladoEsquerdo {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:space-evenly;
 }
 
-.tela_a, .controle_b {
-    width: 80%;
-    height: 55%;
+.ldEsqTopo, .ldDirBase {
+    width: 200px;
+    height: 190px;
     border: 1px solid black;
     z-index: 100;
 }
 
-.tela_b, .controle_a {
-    width: 80%;
-    height: 35%;
+.ldDirTopo, .ldEsqBase {
+    width: 200px;
+    height: 120px;
     border: 1px solid black;
 }
-.tela_a {
+.ldEsqTopo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.moldura_visor {
-    width: 170px;
-    height: 170px;
+.moldura {
+    width: 100%;
+    height: 100%;
     background-color: whitesmoke;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: column;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 15px 100%, 0 155px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 20px 100%, 0 170px);
     position: relative;
 }
-.moldura_visor_topo {
+.molduraTopo {
     width: 100%;
     flex: 1;
     display: flex;
@@ -165,7 +165,7 @@ main {
     justify-content: center;
     flex-direction: row;
 }
-.moldura_visor_base {
+.molduraBase {
     width: 100%;
     flex: 1;
     display: flex;
@@ -173,13 +173,13 @@ main {
     justify-content: space-between;
     flex-direction: row;
 }
-.visor_pokemon {
-    width: 80%;
-    height: 80%;
+.visorPokemon {
+    width: 160px;
+    height: 150px;
     background-color: darkgray;
-    border-radius: 3% 3% 3% 3%;
+    border-radius: 5px;
 }
-.led_mold_top_1, .led_mold_top_2  {
+.ledA, .ledB  {
     width: 7px;
     height: 7px;
     background-color: red;
@@ -187,71 +187,73 @@ main {
     border-radius: 15px;
     margin-right: 10px;
 }
-.led_mold_base  {
+.ledC  {
     width: 10px;
     height: 10px;
     background-color: red;
     border: 1px groove orangered;
     border-radius: 15px;
-    margin-left: 17px;
+    margin-left: 20px;
 }
-.icon_hamburguer {
-    width: 15px;
+.saidaSom {
+    width: 25px;
     height: 15px;
-    margin-right: 17px;
+    margin-right: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     flex-direction: column;
 }
 .line {
     width: 100%; 
     height: 2px; 
-    border-radius: 4px; 
+    border-radius: 2px; 
     background-color: rgba(0,0,0,0.8);
 }
-.controle_a {
+.ldEsqBase {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
 }
 
-.controle_a_esq {
-    background-color: antiquewhite;
+.ldEsqBase_divEsq {
     height: 100%;
-    flex: 1;
+    width: 35px;
     display: flex;
     justify-content: center;
 } 
-.controle_a_dir {
-    background-color: pink;
+.ldEsqBase_divDir {
     height: 100%;
-    flex: 2;
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.controle_a_cen {
-    background-color: aquamarine;
+.ldEsqBase_divCen {
     height: 100%;
-    flex: 3;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 } 
-.controle_a_cen_top {
-    background-color: gold;
+.ldEsqBase_divCen_divTopo {
     width: 100%;
-    flex: 2;
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
-.controle_a_cen_bas {
-    background-color:lawngreen;
+.ldEsqBase_divCen_divBase {
     width: 100%;
     flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: start;
 }
-.bt_circulo {
+.btCirculoPreto {
+    margin-top: 30px;
     width: 25px;
     height: 25px;
     background-color:rgb(37, 43, 43);
@@ -259,19 +261,18 @@ main {
     box-shadow: 2px 2px 2px black;
 }
 
-#bt_direcional {
+#direcional {
     position: relative;
-    background-color: cornflowerblue;
     width: 55px;
     height: 55px;
   }
   
-  #bt_direcional div {
+  #direcional div {
     position: absolute;
     background-color: #333;
   }
   
-  .bt_dir_up {
+  .dirUp {
     width: 17px;
     height: 22px;
     top: -1px;        
@@ -280,7 +281,7 @@ main {
     border-top-right-radius: 2px;
   }
   
-  .bt_dir_down {
+  .dirDown {
     width: 17px;
     height: 22px;
     bottom: -1px;     
@@ -289,7 +290,7 @@ main {
     border-bottom-right-radius: 2px;
   }
   
-  .bt_dir_left {
+  .dirLeft {
     width: 22px;
     height: 17px;
     top: 19px;
@@ -298,7 +299,7 @@ main {
     border-bottom-left-radius: 2px;
   }
   
-  .bt_dir_right {
+  .dirRight {
     width: 22px;
     height: 17px;
     top: 19px;
@@ -307,13 +308,31 @@ main {
     border-bottom-right-radius: 2px;
   }
   
-  .bt_dir_center {
+  .dirCenter {
     width: 17px;
     height: 17px;
     top: 19px;
     left: 19px;
     background-color: #666;
   }
-   
+  .btCancelar {
+    background-color: darkred;
+    width: 35px;
+    height: 7px;
+    border-radius: 5px
+
+  }
+  .btEnviar {
+    background-color: darkblue;
+    width: 35px;
+    height: 7px;
+    border-radius: 5px
+  }
+  .visorTreinador {
+    width: 90px;
+    height: 70px;
+    background-color: aquamarine;
+    border-radius: 5px;
+  }
 
   
