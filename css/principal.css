@@ -3,6 +3,7 @@ html {
     height: 100vh;
     font-size: 16pz;
     overflow: hidden;
+    user-select: none;
 }
 body {
     width: 100%;
