@@ -10,13 +10,23 @@ body {
     height: 100%;
     position: fixed;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 main {
     width: 100%;
     height: 100%;
+    min-width: 550px;
+    max-width: 550px;
+    max-height: 550px;
+    min-height: 550px;
+    background-color: pink;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
     /*overflow: hidden;*/ /* Evita barras de rolagem ao escalar o conteúdo */
     /*transform-origin: center;*/ /* Mantém o centro como ponto de escala para centralização */
 }
@@ -32,15 +42,26 @@ main {
     display: flex;
     position: relative;
     z-index: 1; /* Garante que a Pokédex fique acima de outros elementos */
+    margin-top: 70px;
 }
-@media (max-width: 768px) { main { transform: scale(0.8); } } /* Ajuste para tablets e pequenos laptops */
-@media (max-width: 480px) { main { transform: scale(0.7); } } /* Encaixe perfeito para smartphones */
-@media (max-width: 360px) { main { transform: scale(0.6); } } /* Adaptado para smartphones compactos */
-@media (max-width: 320px) { main { transform: scale(0.5); } } /* Para os menores dispositivos móveis */
-@media (max-width: 260px) { main { transform: scale(0.4); } } /* Visualização ideal para smartwatches grandes */
-@media (max-width: 210px) { main { transform: scale(0.3); } } /* Compacto para smartwatches médios */
-@media (max-width: 160px) { main { transform: scale(0.2); } } /* Visualização mínima para smartwatches pequenos */
-@media (max-width: 110px) { main { transform: scale(0.1); } } /* Último ajuste possível para telas ultra compactas */
+@media (max-width: 570px) { main { transform: scale(0.95); } } 
+@media (max-width: 540px) { main { transform: scale(0.9); } } 
+@media (max-width: 510px) { main { transform: scale(0.85); } }  
+@media (max-width: 480px) { main { transform: scale(0.8); } } 
+@media (max-width: 450px) { main { transform: scale(0.75); } }  
+@media (max-width: 425px) { main { transform: scale(0.7); } } 
+@media (max-width: 395px) { main { transform: scale(0.65); } } 
+@media (max-width: 365px) { main { transform: scale(0.6); } }
+@media (max-width: 340px) { main { transform: scale(0.55); } } 
+@media (max-width: 315px) { main { transform: scale(0.5); } } 
+@media (max-width: 290px) { main { transform: scale(0.45); } } 
+@media (max-width: 260px) { main { transform: scale(0.4); } } 
+@media (max-width: 230px) { main { transform: scale(0.35); } } 
+@media (max-width: 200px) { main { transform: scale(0.3); } } 
+@media (max-width: 170px) { main { transform: scale(0.25); } } 
+@media (max-width: 145px) { main { transform: scale(0.2); } } 
+@media (max-width: 115px) { main { transform: scale(0.15); } } 
+@media (max-width: 85px) { main { transform: scale(0.1); } } 
 
 
     .ladoEsquerdo {
@@ -517,3 +538,52 @@ main {
     border-radius: 50%;
 }
   
+.cabecalho {
+  display: flex;
+  align-items: center;
+  background-color: darkslategray;
+  height: 50px;
+  width: 100%;
+  max-width: 550px;
+  min-width: 510px;
+  padding: 0 25px;
+  color: white;
+  position: absolute;
+  top: 0;
+}
+.cabecalho > * {
+  display: flex;
+  align-items: center;
+}
+.iconeTitulo {
+  height: 100%;
+}
+.textoTitulo {
+  flex: 1;
+  height: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-weight: 700;
+}
+.pesquisaTitulo {
+  height: 100%;
+  padding-top: 10px;
+}
+.pesquisaTitulo > input {
+  padding-left: 10px;
+}
+
+.rodape {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 100%;
+  max-width: 550px;
+  min-width: 510px;
+  padding: 0 25px;
+  color: black;
+  font-weight: 700;
+  position: absolute;
+  bottom: 0;
+}

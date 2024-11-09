@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="imagens/poke ball.png" type="image/x-icon">
+
     <title>Pokedex</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Font Roboto 
@@ -19,6 +21,14 @@
 
 <body>
     <main>
+        <header id="cabecalho" class="cabecalho">
+          <div id="iconeTitulo" class="iconeTitulo"><img src="imagens/poke ball.png" alt="" width="30"></div>
+          <div id="textoTitulo" class="textoTitulo"><span>Pokédex</span></div>
+          <div id="pesquisaTitulo" class="pesquisaTitulo">
+            <input class="form-control" placeholder="digite o nome ou id" type="text">
+            <button id="botao" class="botao"><i class="fa-solid fa-magnifying-glass"></i></button>
+          </div>
+        </header>
         <div id="pokedex" class="pokedex">
             <div class="forma_a"></div>
             <div class="forma_b"></div>
@@ -109,6 +119,9 @@
                   </div>
             </div>
         </div>
+        <footer id="rodape" class="rodape">
+          <p>&#169; 2024 <span>Bruno Moraes</span> | Evoluindo a cada código! ☕💻</p>
+        </footer>
     </main>
     <!--
     <script src="/assets/js/pokemon-model.js"></script>
