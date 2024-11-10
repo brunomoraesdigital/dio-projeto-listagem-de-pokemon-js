@@ -593,21 +593,128 @@ main {
 .importaImagemPokemon {
   width: 100%;
   height: 100%;
+  background-color: skyblue;
+  position: relative;
+  display: flex;
+}
+.importaImagemPokemon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../imagens/pokeballs.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1; /* Aplica a opacidade à imagem de fundo */
+  z-index: 1; /* Coloca a camada abaixo do conteúdo */
 }
 .imagemPokemon {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
+  position: absolute;
+  top: 0;
+  z-index: 5;
 }
 .imagemPokemon img {
   width: 100px;
   height: auto;
+  z-index: 12;
 }
-
 .impoartaDadosPokemon {
   display: flex;
   flex-direction: column;
   padding: 10px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: skyblue;
+  
 }
+
+.impoartaDadosPokemon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../imagens/pokeballs.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1; /* Aplica a opacidade à imagem de fundo */
+  z-index: 1; /* Coloca a camada abaixo do conteúdo */
+  /*
+      --s: 3px; 
+      --c1: #ffffff;
+      --c2: #ff0000;
+      --c3: #c02942;
+      --c4: #e0e0e0;
+      --c5: #8afffd;
+      
+      --_g:conic-gradient(at 25%,#0000 75%,var(--c1) 0);
+      --_s:/calc(2*var(--s)) calc(2*var(--s));
+      background:
+        radial-gradient(#0000 64%,var(--c5) 65%) 
+         0 0/var(--s) var(--s),
+        var(--_g) 0 0 var(--_s),
+        var(--_g) var(--s) var(--s) var(--_s),
+        repeating-conic-gradient(#0000 0 25%,var(--c2) 0 50%)
+         0 0 var(--_s),
+        linear-gradient(var(--c3) 50%,var(--c4) 0) 
+         0 0/1% var(--s);
+  */
+}
+
+.impoartaDadosPokemon > p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: darkslategray;
+  line-height: 20px;
+  
+}
+.impoartaDadosPokemon p:nth-child(1) {
+  color: white;
+}
+.todo {
+  width: 100%; /* Ocupa toda a largura */
+  height: 100%;
+}
+
+.meia-esquerda {
+  width: 50%;
+  height: 100%;
+}
+
+.meia-direita {
+  width: 50%;
+  height: 100%;
+}
+
+/* TIPOS de pokémon */
+
+.bug {background-color: #A8B820;}
+.dark {background-color: #705848;}
+.dragon {background-color: #7038F8;}
+.electric {background-color: #F8D030;}
+.fairy {background-color: #EE99AC;}
+.fighting {background-color: #C03028;}
+.fire {background-color: #F08030;}
+.flying {background-color: #A890F0;}
+.ghost {background-color: #705898;}
+.grass {background-color: #78C850;}
+.ground {background-color: #E0C068;}
+.ice {background-color: #98D8D8;}
+.normal {background-color: #A8A878;}
+.poison {background-color: #A040A0;}
+.psychic {background-color: #F85888;}
+.rock {background-color: #B8A038;}
+.steel {background-color: #B8B8D0;}
+.water {background-color: #6890F0;}
