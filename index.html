@@ -20,13 +20,13 @@
 </head>
 
 <body>
-    <main>
+    <main class="container-fluid">
         <header id="cabecalho" class="cabecalho">
           <div id="iconeTitulo" class="iconeTitulo"><img src="imagens/poke ball.png" alt="" width="30"></div>
           <div id="textoTitulo" class="textoTitulo"><span>Pokédex</span></div>
           <div id="pesquisaTitulo" class="pesquisaTitulo">
-            <input class="form-control" placeholder="digite o nome ou id" type="text">
-            <button id="botao" class="botao"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input class="form-control" id="pesquisaPokemon" placeholder="digite o nome ou id" type="text">
+            <button id="botao" class="botao" onclick="getPokemon($('#pesquisaPokemon').val())" type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
         </header>
         <div id="pokedex" class="pokedex">
@@ -40,7 +40,11 @@
                             <div id="ledA" class="ledA"></div>
                             <div id="ledB" class="ledB"></div>                         
                         </div>
-                        <div id="visorPokemon" class="visorPokemon"><!----></div>
+                        <div id="visorPokemon" class="visorPokemon">
+                          <!---->
+                          <div class="importaImagemPokemon" id="importaImagemPokemon"></div>
+                          <!---->
+                        </div>
                         <div id="molduraBase" class="molduraBase">
                             <div id="ledC" class="ledC"></div>
                             <div id="saidaSom" class="saidaSom">
@@ -78,7 +82,9 @@
             </div>
             <div id="ladoDireito" class="ladoDireito">
                 <div id="ldDirTopo" class="ldDirTopo">
-                    <div id="visorAtributos" class="visorAtributos"></div>
+                    <div id="visorAtributos" class="visorAtributos">
+                      <div class="impoartaDadosPokemon" id="impoartaDadosPokemon"></div>
+                    </div>
                 </div>
                 <div class="ldDirBase">
                     <div class="ldDirBase_divTopo">
@@ -123,11 +129,10 @@
           <p>&#169; 2024 <span>Bruno Moraes</span> | Evoluindo a cada código! ☕💻</p>
         </footer>
     </main>
-    <!--
-    <script src="/assets/js/pokemon-model.js"></script>
-    <script src="/assets/js/poke-api.js"></script>
-    <script src="/assets/js/main.js"></script>
-    -->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script> 
+
 </body>
 
 </html>
