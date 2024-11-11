@@ -43,6 +43,8 @@ main {
     position: relative;
     z-index: 1; /* Garante que a Pokédex fique acima de outros elementos */
     margin-top: 70px;
+    filter: drop-shadow(-2px 1px 1px rgba(0, 0, 0, 0.5));
+
 }
 @media (max-width: 570px) { main { transform: scale(0.95); } } 
 @media (max-width: 540px) { main { transform: scale(0.9); } } 
@@ -209,6 +211,7 @@ main {
     border: 1px groove orangered;
     border-radius: 15px;
     margin-right: 10px;
+    box-shadow: 1px 1px 1px rgb(0,0,0,0.2);
 }
 .ledC  {
     width: 10px;
@@ -217,6 +220,7 @@ main {
     border: 1px groove orangered;
     border-radius: 15px;
     margin-left: 20px;
+    box-shadow: 1px 1px 1px rgb(0,0,0,0.2);
 }
 .saidaSom {
     width: 25px;
@@ -238,6 +242,7 @@ main {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    position: relative; /*-----*/
 }
 
 .ldEsqBase_divEsq {
@@ -263,35 +268,47 @@ main {
 } 
 .ldEsqBase_divCen_divTopo {
     width: 100%;
+    height: 25px;
     flex: 1;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+font-variant-caps: small-caps;
 }
 .ldEsqBase_divCen_divBase {
     width: 100%;
     flex: 3;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: end;
 }
 .btCirculoPreto {
     margin-top: 30px;
     width: 25px;
     height: 25px;
-    background-color:rgb(37, 43, 43);
+    background-color:rgb(80, 80, 80);
     border-radius: 50%;
+    box-shadow: 2px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 #direcional {
     position: relative;
     width: 55px;
     height: 55px;
+    filter: drop-shadow(2px 1px 1px rgba(0, 0, 0, 0.5));
   }
   
   #direcional div {
     position: absolute;
-    background-color: #333;
+    background-color: rgb(66, 66, 66);
   }
   
   .dirUp {
@@ -338,36 +355,46 @@ main {
    /* background-color: #666;*/
   }
   .btCancelar {
-    background-color: darkred;
-    width: 35px;
-    height: 7px;
-    border-radius: 5px
-
+    background-color: rgb(245, 61, 61);
+    color: rgb(245, 162, 162);;
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: -20px;
+    margin-right: 10px;
+    box-shadow: 2px 0.5px 1px 1px rgba(0, 0, 0, 0.5);
   }
   .btEnviar {
-    background-color: darkblue;
-    width: 35px;
-    height: 7px;
-    border-radius: 5px
+    background-color: rgb(108, 108, 212);
+    color: rgb(170, 170, 219);;
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 0.5px 1px 1px rgba(0, 0, 0, 0.5);
   }
   .visorTreinador {
     width: 90px;
     height: 70px;
-    background-color: aquamarine;
     border-radius: 5px;
+    margin-bottom: 15px;
   }
   .visorAtributos {
     width: 100%;
     height: 100%;
-    background-color: aquamarine;
     border-radius: 5px;
   }
 
   /**********************/
 
   .ldDirBase {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.5fr 0.4fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.6fr 0.5fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -401,28 +428,38 @@ main {
     grid-area: teclado;
     padding: 1px;
   }
-  .teclado > * {
+  .teclado > .tecla {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 0.5rem;
-    background-color: #666;
+    font-size: 0.7rem;
+    background-color: steelblue;
+    color: white;
+    padding: 2px 0;
+    filter: drop-shadow(-2px 1px 1px rgba(0, 0, 0, 0.5));
+
 }
-  .teclaA {
-    border-start-start-radius: 5px;
-  }
-  .teclaF {
-    border-end-start-radius: 5px;
-  }
-  .teclaE {
-    border-start-end-radius: 5px;
-  }
-  .teclaJ {
-    border-end-end-radius: 5px;
-  }
+  .teclaA {border-start-start-radius: 5px;}
+  .teclaF {border-end-start-radius: 5px;}
+  .teclaE {border-start-end-radius: 5px;}
+  .teclaJ {border-end-end-radius: 5px;}
   
+  .teclado > .tecla div:nth-child(1) {
+    margin-bottom: -1px;
+  }
+  .teclado > .tecla div:nth-child(2) {
+    font-size: 0.4rem;
+    margin-top: -2px;
+  }
+  .deitado {
+    display: inline-block;
+    font-size: 0.5rem;
+    transform: rotate(-90deg); /* Rotaciona o colchete para que as pontas fiquem para cima */
+    transform-origin: center;
+  }
   .ldDirBase_divCen {  display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
@@ -436,6 +473,8 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
+    filter: drop-shadow(-2px 1px 1px rgba(0, 0, 0, 0.5));
+
   }
   
   .btNovo {
@@ -464,20 +503,31 @@ main {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        font-size: 0.5rem;
+        color: white;
+        font-variant-caps: small-caps;
   }
   
   .btAtributos { 
-    background-color: rgb(56, 52, 52);;
-    width: 35px;
-    height: 7px;
-    border-radius: 5px
+    background-color: rgb(80, 80, 80);
+    width: 50px;
+    height: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    box-shadow: -2px 0.5px 1px 1px rgba(0, 0, 0, 0.5);
 }
   
   .btDescricao { 
-    background-color: rgb(56, 52, 52);
-    width: 35px;
-    height: 7px;
-    border-radius: 5px
+    background-color: rgb(80, 80, 80);
+    width: 50px;
+    height: 10px;
+    padding: 0.5px 0;
+    border-radius: 5px;
+    color: gray;
+    box-shadow: -2px 0.5px 1px 1px rgba(0, 0, 0, 0.5);
  }
   
   .ldDirBase_divBase {  display: grid;
@@ -500,7 +550,6 @@ main {
   .visorEstatistica { 
     width: 90%;
     height: 70px;
-    background-color: lightskyblue;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -518,7 +567,6 @@ main {
   .visorMapa {
     width: 90%;
     height: 70px;
-    background-color: lightskyblue;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -537,8 +585,9 @@ main {
     margin-top: 11px;
     width: 25px;
     height: 25px;
-    background-color: black;
+    background-color: rgb(80, 80, 80);;
     border-radius: 50%;
+    box-shadow: -2px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
   
 .cabecalho {
@@ -608,7 +657,7 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.1; /* Aplica a opacidade à imagem de fundo */
+  opacity: 0.1; 
   z-index: 1; /* Coloca a camada abaixo do conteúdo */
 }
 .imagemPokemon {
@@ -648,7 +697,7 @@ main {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.1; /* Aplica a opacidade à imagem de fundo */
+  opacity: 0.1; 
   z-index: 1; /* Coloca a camada abaixo do conteúdo */
   /*
       --s: 3px; 
@@ -678,10 +727,11 @@ main {
   justify-content: space-between;
   color: darkslategray;
   line-height: 20px;
-  
+  opacity: 0.9;
 }
 .impoartaDadosPokemon p:nth-child(1) {
   color: white;
+  font-weight: 500;
 }
 .todo {
   width: 100%; /* Ocupa toda a largura */
@@ -718,3 +768,65 @@ main {
 .rock {background-color: #B8A038;}
 .steel {background-color: #B8B8D0;}
 .water {background-color: #6890F0;}
+
+
+.visorTreinador, .visorEstatistica, .visorMapa {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: skyblue;
+}
+
+.visorTreinador::after, .visorEstatistica::after, .visorMapa::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../imagens/pokeballs.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.1; 
+  z-index: 1; /* Coloca a camada abaixo do conteúdo */
+}
+
+.visorTreinador {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.barraDeInformacoes {
+  width: 100%;
+  padding: 2.5px 0;
+  background-color: white;
+  border-radius: 5px 5px 0 0;
+  font-size: 0.35rem;
+}
+.barraDeInformacoes p {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.dadosTreinador {
+  width: 100%;
+  padding: 2px 5px;
+  border-radius: 5px 5px 0 0;
+  font-size: 0.35rem;
+  color: darkslategray;
+}
+.dadosTreinador div p {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 0.43rem;
+}
+
+.dadosTreinador hr {
+  border: none;
+  border-top: 1px solid lightblue; 
+  margin: 1em 0;
+}
+

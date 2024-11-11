@@ -8,11 +8,11 @@
 
     <title>Pokedex</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Font Roboto 
+    <!-- Font Roboto -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
-    -->
+    
     <!-- Nosso CSS -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/principal.css">
@@ -64,11 +64,36 @@
                     </div>
                     <div id="ldEsqBase_divCen" class="ldEsqBase_divCen">
                         <div id="ldEsqBase_divCen_divTopo" class="ldEsqBase_divCen_divTopo">
-                            <div id="btCancelar" class="btCancelar"></div>
-                            <div id="btEnviar" class="btEnviar"></div>
+                            <button id="btCancelar" class="btCancelar">cancelar</button>
+                            <button id="btEnviar" class="btEnviar">enviar</button>
                         </div>
                         <div id="ldEsqBase_divCen_divBase" class="ldEsqBase_divCen_divBase">
-                            <div id="visorTreinador" class="visorTreinador"></div>
+                            <div id="visorTreinador" class="visorTreinador">
+                              <div id="barraDeInformacoes" class="barraDeInformacoes">
+                                <p>
+                                  <span class="dataHora">12:30</span>
+                                  <span>10/11/2024</span>
+                                  <span class="sinal"><i class="fas fa-signal"></i> 4G</span>
+                                  <span class="wifi"><i class="fas fa-wifi"></i>
+                                  <span class="bateria"><i class="fas fa-battery-three-quarters"></i></span>
+                                </p>
+                              </div>
+                              <div id="dadosTreinador" class="dadosTreinador">
+                                <div>
+                                  <p><span class="Treinador">Treinador nº: </span><span>1981A</span></p>
+                                </div>
+                                <div>
+                                  <p><span class="Treinador">Nome: </span><span>Bruno Moraes</span></p>
+                                </div>
+                                <div>
+                                  <p><span class="Treinador">Rank: </span><span>Ouro</span></p>
+                                </div>
+                                <hr>
+                                <div>
+                                  <p><span class="Treinador">Saldo R$</span><span>200,00</span></p>
+                                </div>
+                              </div>
+                            </div>
                         </div>
                     </div>
                     <div id="ldEsqBase_divDir" class="ldEsqBase_divDir">
@@ -91,16 +116,36 @@
                 <div class="ldDirBase">
                     <div class="ldDirBase_divTopo">
                       <div class="teclado">
-                        <div class="teclaA">a</div>
-                        <div class="teclaB">b</div>
-                        <div class="teclaC">c</div>
-                        <div class="teclaD">d</div>
-                        <div class="teclaE">e</div>
-                        <div class="teclaF">f</div>
-                        <div class="teclaG">g</div>
-                        <div class="teclaH">h</div>
-                        <div class="teclaI">i</div>
-                        <div class="teclaJ">j</div>
+                        <div id="tecla1" class="tecla teclaA">
+                          <div>1</div><div>. , ? !</div>
+                        </div>
+                        <div id="tecla2" class="tecla teclaB">
+                          <div>2</div><div>a b c</div>
+                        </div>
+                        <div id="tecla3" class="tecla teclaC">
+                          <div>3</div><div>d e f</div>
+                        </div>
+                        <div id="tecla4" class="tecla teclaD">
+                          <div>4</div><div>g h i</div>
+                        </div>
+                        <div id="tecla5" class="tecla teclaE">
+                          <div>5</div><div>j k l</div>
+                        </div>
+                        <div id="tecla6" class="tecla teclaF">
+                          <div>6</div><div>m n o</div>
+                        </div>
+                        <div id="tecla7" class="tecla teclaG">
+                          <div>7</div><div>p q r s</div>
+                        </div>
+                        <div id="tecla8" class="tecla teclaH">
+                          <div>8</div><div>t u v</div>
+                        </div>
+                        <div id="tecla9" class="tecla teclaI">
+                          <div>9</div><div>w x y z</div>
+                        </div>
+                        <div id="tecla0" class="tecla teclaJ">
+                          <div>0</div><div class="deitado">&#91;</div>
+                        </div>
                       </div>
                     </div>
                     <div class="ldDirBase_divCen">
@@ -109,8 +154,8 @@
                         <div class="btApagar"><i class="fa-solid fa-delete-left"></i></div>
                       </div>
                       <div class="ldDirBase_divCen_divDir">
-                        <div class="btAtributos"></div>
-                        <div class="btDescricao"></div>
+                        <button class="btAtributos">atributos</button>
+                        <button class="btDescricao">descrição</button>
                       </div>
                     </div>
                     <div class="ldDirBase_divBase">
