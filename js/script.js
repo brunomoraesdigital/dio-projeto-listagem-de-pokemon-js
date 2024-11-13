@@ -110,7 +110,8 @@ function getPokemon(valor) {
       const descricaoLimpa = descricaoEmIngles ? descricaoEmIngles.flavor_text.replace(/[\x00-\x1F\x7F\x0C]/g, '').replace(/\.(?=\S)/g, '. ') : "Descrição não disponível";
       console.log("Descrição:", descricaoLimpa);
 
-      importaDescricaoPokemon.html(descricaoLimpa);
+      //importaDescricaoPokemon.html(descricaoLimpa);
+      importaDescricaoPokemon.html(`<p>${descricaoLimpa}</p>`);
     });
   })
   .fail(function(jqXHR) {
