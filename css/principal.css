@@ -23,7 +23,7 @@ main {
     min-height: 550px;
     background-color: pink;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
     position: relative;
@@ -726,8 +726,6 @@ font-variant-caps: small-caps;
   min-width: 510px;
   padding: 0 25px;
   color: white;
-  position: absolute;
-  top: 0;
 }
 .cabecalho > * {
   display: flex;
@@ -762,8 +760,6 @@ font-variant-caps: small-caps;
   padding: 0 25px;
   color: black;
   font-weight: 700;
-  position: absolute;
-  bottom: 0;
 }
 .importaImagemPokemon {
   width: 100%;
