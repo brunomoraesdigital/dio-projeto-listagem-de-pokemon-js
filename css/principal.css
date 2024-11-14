@@ -673,18 +673,19 @@ font-variant-caps: small-caps;
     background-color: white;
     color: rgb(47, 79, 79);
     border-radius: 5px 5px 0 0;
-    font-size: 0.35rem;
+    font-size: 0.4rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 .dadosEstatisticas {
   padding: 2px 5px;
   font-size: 0.4rem;
+  color: rgb(47, 79, 79);
+
 }
-.dadosEstatisticas div {
-  margin-top: 3px;
-}
+
 .dadosEstatisticas hr {
   border: none;
   border-top: 1px solid lightblue; 
@@ -694,7 +695,6 @@ font-variant-caps: small-caps;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  color: rgb(47, 79, 79);
 }
   .ldDirBase_divBase_divCen {  
     display: flex;
@@ -962,7 +962,7 @@ font-variant-caps: small-caps;
   padding: 2.5px 0;
   background-color: white;
   border-radius: 5px 5px 0 0;
-  font-size: 0.35rem;
+  font-size: 0.4rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -980,10 +980,9 @@ font-variant-caps: small-caps;
   flex-direction: column;
 }
 .dadosResistenciaFraquesaPokemon div {
-  height: 50%;
+  flex: 1;
 }
-.dadosResistenciaFraquesaPokemon div:nth-child(1) {
-  height: 50%;
+.dadosResistenciaFraquesaPokemon div:nth-child(2) {
   border-bottom: 1px solid lightblue; 
 }
 .dadosResistenciaFraquesaPokemon hr {
@@ -1019,7 +1018,8 @@ font-variant-caps: small-caps;
   height: 100%;
   position: relative;
   background-color: skyblue;
-  color: rgb(47, 79, 79)
+  color: rgb(47, 79, 79);
+  font-size: 0.7rem;
 }
 
 .importaDescricaoPokemon::after {
@@ -1043,4 +1043,68 @@ font-variant-caps: small-caps;
   opacity: 0.9;
   word-break: keep-all;
   text-align: center;
+}
+/***/
+
+
+/* Adicione o position: relative ao contêiner do botão para permitir o posicionamento dos ícones */
+.ldDirBase_divCen_divDir {
+    position: relative;
+}
+/* Estilo para os ícones de mão ou setas apontando para os botões */
+.icone-flutuante-atributos {
+  position: absolute;
+  font-size: 10px; /* Tamanho da mãozinha ou seta */
+  color: #fff; /* Cor da mãozinha ou seta */
+}
+.icone-flutuante-descricao {
+  position: absolute;
+  font-size: 10px; /* Tamanho da mãozinha ou seta */
+  color: #fff; /* Cor da mãozinha ou seta */
+}
+.icone-flutuante-atributos {
+  left: 60px; /* Centraliza horizontalmente */
+  transform: rotate(-135deg); /* Ajusta a centralização exata */
+}
+
+.icone-flutuante-descricao {
+  left: 120px; /* Centraliza horizontalmente */
+  transform: rotate(-135deg) ; /* Ajusta a centralização exata */
+}
+
+/* Animação de flutuação, se quiser adicionar */
+@keyframes flutuar1 {
+  0% {
+    top: 0px;
+    left: 120px;
+  }
+  50% {
+    top: 10px;
+    left: 110px;
+  }
+  100% {
+    top: 0px;
+    left: 120px;
+  }
+}
+@keyframes flutuar2 {
+  0% {
+    top: 0px;
+    left: 60px;
+  }
+  50% {
+    top: 10px;
+    left: 50px;
+  }
+  100% {
+    top: 0px;
+    left: 60px;
+  }
+}
+.icone-flutuante-atributos {
+  animation: flutuar1 2s infinite ease-in-out;
+}
+
+.icone-flutuante-descricao {
+  animation: flutuar2 2s infinite ease-in-out;
 }

@@ -22,7 +22,7 @@ function getPokemon(valor) {
     if (data.types.length === 1) {
       content += `<div class="todo ${tipo1}"></div>`; // Quando tem apenas um tipo
     } else {
-      content += `
+      content += ` 
         <div class="meia-esquerda ${tipo1}"></div>
         <div class="meia-direita ${tipo2}"></div>
       `; // Quando tem dois tipos
@@ -58,6 +58,32 @@ function getPokemon(valor) {
     `;
     importaDadosPokemon.html(content);
 
+    // Função para gerar as estatísticas aleatórias
+    function gerarEstatisticas() {
+      // Viu: valor aleatório entre 10 e 1000
+      const viu = Math.floor(Math.random() * (1000 - 10 + 1)) + 10;
+
+      // Pegou: valor aleatório entre 0 e o valor de "Viu"
+      const pegou = Math.floor(Math.random() * (viu + 1));
+
+      // Enfrentou: valor aleatório entre 0 e "Viu"
+      const enfrentou = Math.floor(Math.random() * (viu + 1));
+
+      // Usou: se "Pegou" for 0, "Usou" também será 0, caso contrário, entre 0 e "Pegou"
+      const usou = pegou === 0 ? 0 : Math.floor(Math.random() * (pegou + 1));
+
+      // Atualiza a HTML com as estatísticas
+      document.querySelector('#estatistica').innerHTML = `
+        <p><span>Viu</span><span>${viu}</span></p>
+        <p><span>Pegou</span><span>${pegou}</span></p>
+        <p><span>Enfrentou</span><span>${enfrentou}</span></p>
+        <p><span>Usou</span><span>${usou}</span></p>
+      `;
+    }
+
+    // Chama a função para gerar as estatísticas
+    gerarEstatisticas();
+
     // Obter fraquezas e resistências
     $.ajax({
       url: `https://pokeapi.co/api/v2/type/${data.types[0].type.name}`,
@@ -82,7 +108,7 @@ function getPokemon(valor) {
       console.log("Resistências:", Array.from(resistencias).join(", "));
 
       // Exibe fraquezas com <span> para cada uma
-      content = '<p><span class="fraqueza">Fraquezas</span>';
+      content = '<p><span class="fraqueza">Fraquezas</span><br>';
       fraquezas.forEach(weakness => {
         content += `<span>${weakness} </span>`;
       });
@@ -90,7 +116,7 @@ function getPokemon(valor) {
       importaFraquezaPokemon.html(content);
 
       // Exibe resistências com <span> para cada uma
-      content = '<p><span class="resistencia">Resistências</span>';
+      content = '<p><span class="resistencia">Resistências</span><br>';
       resistencias.forEach(resistance => {
         content += `<span>${resistance} </span>`;
       });
@@ -119,7 +145,6 @@ function getPokemon(valor) {
   });
 }
 
-
 // Função para alternar a visibilidade entre atributos e descrição
 document.querySelector('.btAtributos').addEventListener('click', function() {
   // Exibe os atributos e esconde a descrição
@@ -144,3 +169,12 @@ document.querySelector('.btDescricao').addEventListener('click', function() {
 // Exibe a descrição por padrão ao carregar
 document.querySelector('#importaDescricaoPokemon').style.display = 'flex';
 document.querySelector('#importaDadosPokemon').style.display = 'none';
+
+
+$(document).ready(function () {
+  $(".btAtributos, .btDescricao").hover(function () {
+    $(".flutuante").fadeIn();
+  }, function () {
+    $(".flutuante").fadeOut();
+  });
+});
