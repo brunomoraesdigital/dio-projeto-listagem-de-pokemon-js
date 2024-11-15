@@ -69,7 +69,7 @@ main {
     .ladoEsquerdo {
     width: 225px;
     height: 350px;
-    background-color: red;
+    background-color: #DC0A2D;
     position: absolute;
     top: 0;
     z-index: 2;
@@ -78,7 +78,7 @@ main {
 .ladoDireito {
     width: 250px;
     height: 350px;
-    background-color: red;
+    background-color: #DC0A2D;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -102,7 +102,7 @@ main {
     content: "";
     height: 0;
     width: 99px;
-    border-bottom: 50px solid red;
+    border-bottom: 50px solid #DC0A2D;
     border-left: 50px solid transparent;
     border-right: 50px solid transparent;           
     position: absolute;
@@ -124,7 +124,7 @@ main {
 .forma_b {
     height: 75px;
     width: 250px; 
-    background-color: red;
+    background-color: #DC0A2D;
     border-radius: 15px 2px 0 0;
     border: 1px solid rgba(139, 0, 0, 0.7); 
     position: absolute;
@@ -141,7 +141,7 @@ main {
     top: -50px;
     left: 95%;
     margin-left: -50%;
-    background-color: red;
+    background-color: #DC0A2D;
     border: 1px groove rgba(139, 0, 0, 0.5);
     box-shadow: -5px 0px 15px rgba(139, 0, 0, 0.1),  5px 0px 15px rgba(139, 0, 0, 0.1); 
 }
@@ -1103,4 +1103,82 @@ font-variant-caps: small-caps;
 
 .icone-flutuante-descricao {
   animation: flutuar2 2s infinite ease-in-out;
+}
+.cam {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  position: absolute;
+  top: -58px;
+  left: 15px;
+  border-radius: 50%;
+  z-index: 1;
+  border: 1px solid black;
+  
+}
+.lente {
+  width: 43px;
+  height: 43px;
+  background-color: skyblue;
+  border-radius: 50%;
+  border: 1px solid rgb(94, 94, 94);
+}
+.reflexo {
+  width: 35px;
+  height: 35px;
+  background-color: dodgerblue;
+  border-radius: 50%;
+  display: flex;
+  position: absolute;
+  right: 7px;
+  bottom: 7px;
+}
+.brilho {
+  width: 18px;
+  height: 18px;
+  background-color: skyblue;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+.brilho2 {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.ledVermelho, 
+.ledAmarelo, 
+.ledVerde {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  position: absolute;
+  top: -60px;
+  left: 80px;
+  border-radius: 50%;
+}
+.ledVermelho {
+  left: 80px;
+  background-color: red;
+  z-index: 3;
+  border: 1px groove rgba(0, 0, 0, 0.5);
+} 
+.ledAmarelo {
+  left: 105px;
+  background-color: yellow;
+  z-index: 3;
+  border: 1px groove rgba(0, 0, 0, 0.5);
+} 
+.ledVerde {
+  left: 130px;
+  background-color: green;
+  z-index: 3;
+  border: 1px groove rgba(0, 0, 0, 0.5);
 }
