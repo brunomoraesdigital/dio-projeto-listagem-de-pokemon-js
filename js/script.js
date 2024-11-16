@@ -9,25 +9,24 @@ function getPokemon(valor) {
   .done(function(data) {
     let content = "";
 
-// Verifica se o Pokémon tem um ou dois tipos
-const tipo1 = data.types[0]?.type.name || '';  // Tipo 1
-const tipo2 = data.types[1]?.type.name || '';  // Tipo 2 (caso exista)
+    // Verifica se o Pokémon tem um ou dois tipos
+    const tipo1 = data.types[0]?.type.name || '';  // Tipo 1
+    const tipo2 = data.types[1]?.type.name || '';  // Tipo 2 (caso exista)
 
-// Condicional para um ou dois tipos
-if (data.types.length === 1) {
-  content += `<div class="todo ${tipo1}"></div>`; // Quando tem apenas um tipo
-} else {
-  content += ` 
-    <div class="meia-esquerda ${tipo1}"></div>
-    <div class="meia-direita ${tipo2}"></div>
-  `; // Quando tem dois tipos
-}
-
+    // Condicional para um ou dois tipos
+    if (data.types.length === 1) {
+      content += `<div class="todo ${tipo1}"></div>`; // Quando tem apenas um tipo
+    } else {
+      content += ` 
+        <div class="meia-esquerda ${tipo1}"></div>
+        <div class="meia-direita ${tipo2}"></div>
+      `; // Quando tem dois tipos
+    }
 
     // Atualiza imagem do Pokémon
     const importaImagemPokemon = $("#importaImagemPokemon");
     content += `<div class="imagemPokemon">
-                  <img alt="" src="${/*data.sprites.other.dream_world.front_default*/data.sprites.front_default}">
+                  <img alt="" src="${data.sprites.front_default}">
                 </div>`;
     importaImagemPokemon.html(content);
 
@@ -47,6 +46,9 @@ if (data.types.length === 1) {
     `;
     importaDadosPokemon.html(content);
 
+    // Reproduz o cry do Pokémon pesquisado
+    new Audio(`https://play.pokemonshowdown.com/audio/cries/${data.name.toLowerCase()}.mp3`).play();
+
     // Descrição do Pokémon
     $.ajax({
       url: `https://pokeapi.co/api/v2/pokemon-species/${data.id}/`,
@@ -54,7 +56,7 @@ if (data.types.length === 1) {
       dataType: "json"
     }).done(function(speciesData) {
       const descricao = speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
-      const descricaoLimpa = descricao ? descricao.flavor_text.replace(/[\x00-\x1F\x7F\x0C]/g, '').replace(/\.(?=\S)/g, '. ') : "Descrição não disponível";
+      const descricaoLimpa = descricao ? descricao.flavor_text.replace(/[\x00-\x1F\x7F\x0C]/g, ' ').replace(/\.(?=\S)/g, '. ') : "Descrição não disponível";
       $("#importaDescricaoPokemon").html(`<p>${descricaoLimpa}</p>`);
     });
 
@@ -97,31 +99,29 @@ if (data.types.length === 1) {
       });
     });
 
-// Função para gerar as estatísticas aleatórias
-function gerarEstatisticas() {
-  // Viu: valor aleatório entre 10 e 1000
-  const viu = Math.floor(Math.random() * (1000 - 10 + 1)) + 10;
+    // Função para gerar as estatísticas aleatórias
+    function gerarEstatisticas() {
+      const viu = Math.floor(Math.random() * (1000 - 10 + 1)) + 10;
+      const pegou = Math.floor(Math.random() * (viu + 1));
+      const enfrentou = Math.floor(Math.random() * (viu + 1));
+      const usou = pegou === 0 ? 0 : Math.floor(Math.random() * (pegou + 1));
 
-  // Pegou: valor aleatório entre 0 e o valor de "Viu"
-  const pegou = Math.floor(Math.random() * (viu + 1));
+      document.querySelector('#estatistica').innerHTML = `
+        <p><span>Viu</span><span>${viu}</span></p>
+        <p><span>Pegou</span><span>${pegou}</span></p>
+        <p><span>Enfrentou</span><span>${enfrentou}</span></p>
+        <p><span>Usou</span><span>${usou}</span></p>
+      `;
+    }
+    gerarEstatisticas();
 
-  // Enfrentou: valor aleatório entre 0 e "Viu"
-  const enfrentou = Math.floor(Math.random() * (viu + 1));
-
-  // Usou: se "Pegou" for 0, "Usou" também será 0, caso contrário, entre 0 e "Pegou"
-  const usou = pegou === 0 ? 0 : Math.floor(Math.random() * (pegou + 1));
-
-  // Atualiza a HTML com as estatísticas
-  document.querySelector('#estatistica').innerHTML = `
-    <p><span>Viu</span><span>${viu}</span></p>
-    <p><span>Pegou</span><span>${pegou}</span></p>
-    <p><span>Enfrentou</span><span>${enfrentou}</span></p>
-    <p><span>Usou</span><span>${usou}</span></p>
-  `;
-}
-
-// Chama a função para gerar as estatísticas
-gerarEstatisticas();
+    // Função para reproduzir o som do Pokémon
+    const btSomPokemon = document.getElementById('btCirculoAmarelo');
+    if (btSomPokemon) {
+      btSomPokemon.onclick = () => {
+        new Audio(`https://play.pokemonshowdown.com/audio/cries/${data.name.toLowerCase()}.mp3`).play();
+      };
+    }
   }).fail(function(jqXHR) {
     console.log("Erro HTTP: " + jqXHR.status);
   });
