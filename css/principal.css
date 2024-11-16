@@ -753,6 +753,7 @@ font-variant-caps: small-caps;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 50px;
   width: 100%;
   max-width: 550px;
@@ -760,6 +761,11 @@ font-variant-caps: small-caps;
   padding: 0 25px;
   color: black;
   font-weight: 700;
+}
+.rodape #google_translate_element {
+  position: absolute;
+  top: 50px;
+  right: 22px;
 }
 .importaImagemPokemon {
   width: 100%;

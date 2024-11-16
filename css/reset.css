@@ -6,7 +6,7 @@
     font: inherit;
     vertical-align: baseline;
     text-decoration: none;
-    /*user-select: none;*/
+    user-select: none;
     outline: none;
     list-style: none;
     font-family: 'Roboto', sans-serif;

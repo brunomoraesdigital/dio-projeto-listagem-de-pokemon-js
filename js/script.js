@@ -342,3 +342,30 @@ document.querySelector('.btNovo').addEventListener('click', function() {
   resetarCampos();  // Chama a função para resetar os campos ao clicar no botão
 });
 
+/******* */
+
+// Seleciona o botão e o elemento que contém a descrição
+const botao = document.getElementById('btCirculoPreto');
+const importaDescricaoPokemon = document.getElementById('importaDescricaoPokemon');
+
+// Adiciona um evento de clique ao botão
+botao.addEventListener('click', function() {
+  // Obtém o conteúdo do elemento
+  const conteudo = importaDescricaoPokemon.textContent.trim();
+
+  // Se não houver conteúdo, lê a mensagem informando que não há Pokémon selecionado
+  if (conteudo === "") {
+    const mensagem = "Não há Pokémon selecionado";
+    const utterance = new SpeechSynthesisUtterance(mensagem);
+    utterance.lang = 'pt-BR';  // Definindo o idioma para português
+    speechSynthesis.speak(utterance);
+  } else {
+    // Se houver conteúdo, lê a descrição do Pokémon
+    const utterance = new SpeechSynthesisUtterance(conteudo);
+    utterance.lang = 'pt-BR';  // Definindo o idioma para português
+    speechSynthesis.speak(utterance);
+  }
+});
+
+/**  */
+

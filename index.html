@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="notranslate">
 
 <head>
     <meta charset="UTF-8">
@@ -72,12 +72,12 @@
                 </div>
                 <div id="ldEsqBase" class="ldEsqBase">
                     <div id="ldEsqBase_divEsq" class="ldEsqBase_divEsq">
-                        <div id="btCirculoPreto" class="btCirculoPreto"></div>
+                        <div id="btCirculoPreto" class="btCirculoPreto" onclick="traduzirDescricao()"></div>
                     </div>
                     <div id="ldEsqBase_divCen" class="ldEsqBase_divCen">
                         <div id="ldEsqBase_divCen_divTopo" class="ldEsqBase_divCen_divTopo">
-                            <button id="btCancelar" class="btCancelar">cancelar</button>
-                            <button id="btEnviar" class="btEnviar">enviar</button>
+                            <button id="btCancelar" class="btCancelar notranslate">cancelar</button>
+                            <button id="btEnviar" class="btEnviar notranslate">enviar</button>
                         </div>
                         <div id="ldEsqBase_divCen_divBase" class="ldEsqBase_divCen_divBase">
                             <div id="visorTreinador" class="visorTreinador">
@@ -123,7 +123,7 @@
                 <div id="ldDirTopo" class="ldDirTopo">
                     <div id="visorAtributos" class="visorAtributos">
                       <div class="importaDadosPokemon" id="importaDadosPokemon"></div>
-                      <div id="importaDescricaoPokemon" class="importaDescricaoPokemon"></div>
+                      <div id="importaDescricaoPokemon" class="importaDescricaoPokemon translate"></div>
                     </div>
                 </div>
                 <div class="ldDirBase">
@@ -167,18 +167,18 @@
                         <div class="btApagar"><i class="fa-solid fa-delete-left"></i></div>
                       </div>
                       <div class="ldDirBase_divCen_divDir">
-                        <button id="btAtributos" class="btAtributos">atributos</button>
+                        <button id="btAtributos" class="btAtributos notranslate">atributos</button>
                         <!--<div class="icone-flutuante-atributos">
                           <i class="fa-solid fa-hand-point-up"></i> 
                         </div>-->
-                        <button id="btDescricao" class="btDescricao">descrição</button>
+                        <button id="btDescricao" class="btDescricao notranslate">descrição</button>
                         <!--<div class="icone-flutuante-descricao">
                           <i class="fa-solid fa-hand-point-up"></i> 
                         </div>-->
                       </div>
                     </div>
                     <div class="ldDirBase_divBase">
-                      <div class="ldDirBase_divBase_divEsq">
+                      <div class="ldDirBase_divBase_divEsq notranslate">
                         <div class="visorEstatistica">
                           <div id="barraDeInformacoesEstatisticas" class="barraDeInformacoesEstatisticas">
                             <p>Estatisticas</p>
@@ -217,12 +217,29 @@
             </div>
         </div>
         <footer id="rodape" class="rodape">
+          <div id="google_translate_element"></div>
           <p>&#169; 2024 <span>Bruno Moraes</span> | Evoluindo a cada código! ☕💻</p>
         </footer>
     </main>
+    <!-- Inclua o script do Google Translate -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'en',
+          includedLanguages: 'pt,en', // Inclua os idiomas que você precisa
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: false // Isso desativa a interface visível do tradutor
+        }, 'google_translate_element');
+      }
+    </script>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="js/script.js"></script> 
+    <script type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/script.js"></script>
 
 </body>
 
