@@ -194,4 +194,97 @@ toggleAbas();
 
 /* ***** */
 
+// Adicionando o evento de clique no novo botão para acionar a pesquisa
+document.querySelector('#btEnviar').addEventListener('click', function() {
+  // Obtém o valor do campo de pesquisa
+  const pesquisaValor = document.querySelector('#pesquisaPokemon').value;
+
+  // Chama a função getPokemon passando o valor da pesquisa
+  getPokemon(pesquisaValor);
+});
+
+
+
+// Função para digitar números no campo de pesquisa
+function setupTeclado() {
+  // Seleciona o campo de pesquisa
+  const campoPesquisa = document.getElementById('pesquisaPokemon');
+
+  // Adiciona um ouvinte de evento para cada tecla
+  document.querySelectorAll('.tecla').forEach(tecla => {
+    tecla.addEventListener('click', function() {
+      const valorTecla = this.querySelector('div:first-child').textContent;
+      campoPesquisa.value += valorTecla; // Adiciona o número ao campo de pesquisa
+    });
+  });
+
+  // Adiciona um ouvinte de evento para o botão de apagar
+  const btApagar = document.querySelector('.btApagar');
+  btApagar.addEventListener('click', function() {
+    campoPesquisa.value = campoPesquisa.value.slice(0, -1); // Remove o último caractere do campo de pesquisa
+  });
+}
+
+// Chama a função para configurar o teclado
+setupTeclado();
+
+
+
+
+// Função para limpar as variáveis e resetar os elementos
+function resetarCampos() {
+  // Limpa as variáveis de estatísticas
+  let viu = "-";
+  let pegou = "-";
+  let enfrentou = "-";
+  let usou = "-";
+
+  // Atualiza os elementos de estatísticas com "-"
+  document.querySelector('#estatistica').innerHTML = `
+    <p><span>Viu</span><span>${viu}</span></p>
+    <p><span>Pegou</span><span>${pegou}</span></p>
+    <p><span>Enfrentou</span><span>${enfrentou}</span></p>
+    <p><span>Usou</span><span>${usou}</span></p>
+  `;
+
+  // Limpa as fraquezas e resistências (valores vazios)
+  let fraquezas = [];
+  let resistencias = [];
+
+  // Exibe fraquezas com <span> para cada uma, mas vazio se não houver
+  let content = '<p><span class="fraqueza">Fraquezas:</span><br>';
+  fraquezas.forEach(weakness => {
+    content += `<span>${weakness} </span>`;
+  });
+  content += '</p>';
+  $("#importaFraquezaPokemon").html(content);
+
+  // Exibe resistências com <span> para cada uma, mas vazio se não houver
+  content = '<p><span class="resistencia">Resistências:</span><br>';
+  resistencias.forEach(resistance => {
+    content += `<span>${resistance} </span>`;
+  });
+  content += '</p>';
+  $("#importaResistenciaPokemon").html(content);
+
+  // Limpa a imagem Pokémon
+  const importaImagemPokemon = $("#importaImagemPokemon");
+  importaImagemPokemon.html(""); 
+
+  // Limpa os dados do Pokémon
+  const importaDadosPokemon = $("#importaDadosPokemon");
+  importaDadosPokemon.html(""); 
+
+  // Limpa a descrição do Pokémon
+  const importaDescricaoPokemon = $("#importaDescricaoPokemon");
+  importaDescricaoPokemon.html(""); 
+
+  // Se você quiser também limpar a pesquisa de Pokémon
+  document.getElementById('pesquisaPokemon').value = "";  // Limpa o campo de pesquisa
+}
+
+// Adicionando o evento de clique no botão .btNovo
+document.querySelector('.btNovo').addEventListener('click', function() {
+  resetarCampos();  // Chama a função para resetar os campos ao clicar no botão
+});
 
