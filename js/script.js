@@ -193,6 +193,14 @@ toggleAbas();
 
 
 /* ***** */
+// Adiciona o evento de 'keydown' para detectar quando a tecla Enter é pressionada
+document.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é o Enter
+  if (event.key === 'Enter') {
+    // Simula o clique no botão de pesquisa (com a lupa)
+    document.querySelector('#botao').click();
+  }
+});
 
 // Adicionando o evento de clique no novo botão para acionar a pesquisa
 document.querySelector('#btEnviar').addEventListener('click', function() {
@@ -203,6 +211,52 @@ document.querySelector('#btEnviar').addEventListener('click', function() {
   getPokemon(pesquisaValor);
 });
 
+// Adiciona o evento de 'keydown' para detectar quando a tecla Enter for pressionada
+document.querySelector('#pesquisaPokemon').addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada foi a tecla Enter (código 13)
+  if (event.key === 'Enter') {
+    // Previne o comportamento padrão (caso haja algum)
+    event.preventDefault();
+
+    // Chama a função getPokemon com o valor do campo de pesquisa
+    getPokemon($('#pesquisaPokemon').val());
+  }
+});
+// Adiciona o evento de 'keydown' para detectar quando a tecla Escape for pressionada
+document.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada foi a tecla Escape (código 27)
+  if (event.key === 'Escape') {
+    // Previne o comportamento padrão (se necessário)
+    event.preventDefault();
+
+    // Simula o clique no botão .btNovo
+    document.querySelector('.btNovo').click();
+  }
+});
+// Adiciona o evento de 'keydown' para detectar quando as teclas de seta são pressionadas
+document.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é uma das teclas de seta
+  switch (event.key) {
+    case 'ArrowUp':
+      // Simula o clique no botão dirUP
+      document.querySelector('.dirUp').click();
+      break;
+    case 'ArrowLeft':
+      // Simula o clique no botão dirLeft
+      document.querySelector('.dirLeft').click();
+      break;
+    case 'ArrowDown':
+      // Simula o clique no botão dirDown
+      document.querySelector('.dirDown').click();
+      break;
+    case 'ArrowRight':
+      // Simula o clique no botão dirRight
+      document.querySelector('.dirRight').click();
+      break;
+    default:
+      break;
+  }
+});
 
 
 // Função para digitar números no campo de pesquisa
