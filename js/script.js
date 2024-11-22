@@ -55,7 +55,8 @@ function getPokemon(valor) {
       method: "get",
       dataType: "json"
     }).done(function(speciesData) {
-      const descricao = speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
+      const descricao = speciesData.flavor_text_entries.find(entry => entry.language.name === "pt-BR") || 
+                  speciesData.flavor_text_entries.find(entry => entry.language.name === "en");
       const descricaoLimpa = descricao ? descricao.flavor_text.replace(/[\x00-\x1F\x7F\x0C]/g, ' ').replace(/\.(?=\S)/g, '. ') : "Descrição não disponível";
       $("#importaDescricaoPokemon").html(`<p>${descricaoLimpa}</p>`);
     });

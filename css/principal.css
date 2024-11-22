@@ -773,6 +773,7 @@ font-variant-caps: small-caps;
   background-color: skyblue;
   position: relative;
   display: flex;
+  overflow: hidden;
 }
 .importaImagemPokemon::after {
   content: '';
@@ -799,7 +800,7 @@ font-variant-caps: small-caps;
   z-index: 5;
 }
 .imagemPokemon img {
-  width: 100px;
+  width: 100%;
   height: auto;
   z-index: 12;
 }
@@ -1008,9 +1009,6 @@ font-variant-caps: small-caps;
 }
 
 /* Torna a descrição visível inicialmente */
-.importaDescricaoPokemon {
-  display: flex;
-}
 
 .importaDescricaoPokemon {
   display: flex;
@@ -1022,6 +1020,14 @@ font-variant-caps: small-caps;
   background-color: skyblue;
   color: rgb(47, 79, 79);
   font-size: 0.7rem;
+  overflow: scroll; /* Permite a rolagem */
+  /* Estilo para esconder barras de rolagem */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scroll-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari e Edge */
 }
 
 .importaDescricaoPokemon::after {
