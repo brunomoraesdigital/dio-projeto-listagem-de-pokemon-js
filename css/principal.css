@@ -63,7 +63,11 @@ main {
 @media (max-width: 170px) { main { transform: scale(0.25); } } 
 @media (max-width: 145px) { main { transform: scale(0.2); } } 
 @media (max-width: 115px) { main { transform: scale(0.15); } } 
-@media (max-width: 85px) { main { transform: scale(0.1); } } 
+@media (max-width: 85px) { main { transform: scale(0.1); } }
+@media (max-width: 768px) and (orientation: landscape) {
+  main { transform: scale(0.6); }
+}
+
 
 
     .ladoEsquerdo {
