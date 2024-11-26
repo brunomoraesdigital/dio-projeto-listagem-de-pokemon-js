@@ -64,16 +64,7 @@ main {
 @media (max-width: 145px) { main { transform: scale(0.2); } } 
 @media (max-width: 115px) { main { transform: scale(0.15); } } 
 @media (max-width: 85px) { main { transform: scale(0.1); } }
-@media (orientation: landscape) { }
-/* Smartphones pequenos (320px a 480px de largura) */
-@media screen and (min-width: 320px) and (max-width: 480px) and (orientation: landscape) {
-  main { transform: scale(0.35); }
-}
 
-/* Smartphones médios (481px a 767px de largura) */
-@media screen and (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
-  main { transform: scale(0.5); }
-}
 
 /* Tablets pequenos (768px a 1024px de largura) */
 @media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
