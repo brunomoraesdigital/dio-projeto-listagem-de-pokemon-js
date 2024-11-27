@@ -370,3 +370,27 @@ botao.addEventListener('click', function() {
 
 /**  */
 
+// Adiciona o evento de 'keydown' para detectar as teclas numéricas 0-9
+document.addEventListener('keydown', function(event) {
+  // Verifica se a tecla pressionada é um número de 0 a 9
+  if (event.key >= '0' && event.key <= '9') {
+    const campoPesquisa = document.getElementById('pesquisaPokemon');
+    campoPesquisa.value += event.key; // Adiciona o número pressionado ao campo de pesquisa
+  }
+
+  // Verifica se a tecla pressionada é "Enter"
+  if (event.key === 'Enter') {
+    document.querySelector('#botao').click(); // Simula o clique no botão de pesquisa (com a lupa)
+  }
+
+  // Verifica se a tecla pressionada é "Escape" para resetar os campos
+  if (event.key === 'Escape') {
+    document.querySelector('.btNovo').click(); // Simula o clique no botão de reset
+  }
+
+  // Verifica se a tecla pressionada é "Backspace" (apagar)
+  if (event.key === 'Backspace') {
+    const campoPesquisa = document.getElementById('pesquisaPokemon');
+    campoPesquisa.value = campoPesquisa.value.slice(0, -1); // Remove o último caractere
+  }
+});
