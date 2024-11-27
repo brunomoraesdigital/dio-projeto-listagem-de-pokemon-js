@@ -780,7 +780,19 @@ font-variant-caps: small-caps;
   padding: 0 25px;
   color: black;
   font-weight: 700;
+  font-size: 0.5rem;
+  gap: 0.2rem;
 }
+.rodape p:nth-child(1) {
+  font-size: 0.6rem;
+}
+.rodape hr {
+  border: none; /* Certifica que não há borda padrão */
+  height: 1px; /* Define a altura */
+  width: 80%;
+  background-color: black; /* Adiciona uma cor de fundo */
+}
+
 .rodape #google_translate_element {
   position: absolute;
   top: 50px;
@@ -1135,6 +1147,7 @@ font-variant-caps: small-caps;
 .icone-flutuante-descricao {
   animation: flutuar2 2s infinite ease-in-out;
 }
+
 .cam {
   width: 50px;
   height: 50px;
@@ -1183,33 +1196,104 @@ font-variant-caps: small-caps;
   top: 5px;
   left: 5px;
 }
+/**/
+
+.cam::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0) 100%);
+  z-index: 99; 
+  animation: brilhoFalar 1.5s ease-in-out infinite;
+}
+
+@keyframes brilhoFalar {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+}
+
+/**/
 
 .ledVermelho, 
 .ledAmarelo, 
 .ledVerde {
   width: 15px;
   height: 15px;
-  display: flex;
   position: absolute;
   top: -60px;
-  left: 80px;
   border-radius: 50%;
+  transition: background-color 1s ease-in-out, box-shadow 1s ease-in-out; /* Suaviza transição de cor e brilho */
+  z-index: 99;
 }
+
+/* Estado inicial dos LEDs (apagado) */
 .ledVermelho {
   left: 80px;
-  background-color: red;
-  z-index: 3;
-  border: 1px groove rgba(0, 0, 0, 0.5);
+  background-color: #BB0000; /* Vermelho apagado */
+  border: 1px solid #A4030D;
+  animation: piscaVermelho 3.5s infinite; /* Ciclo rápido de 3.5s */
+  box-shadow: inset 0px 3px 8px rgba(255, 0, 0, 0.3); /* Sombra interna */
 } 
 .ledAmarelo {
   left: 105px;
-  background-color: yellow;
-  z-index: 3;
-  border: 1px groove rgba(0, 0, 0, 0.5);
+  background-color: #766500; /* Amarelo apagado */
+  border: 1px solid #A4030D;
+  animation: piscaAmarelo 3.5s infinite;
 } 
 .ledVerde {
   left: 130px;
-  background-color: green;
-  z-index: 3;
-  border: 1px groove rgba(0, 0, 0, 0.5);
+  background-color: #007722; /* Verde apagado */
+  border: 1px solid #A4030D;
+  animation: piscaVerde 3.5s infinite;
+} 
+
+/* Animações */
+@keyframes piscaVermelho {
+  0%, 20% { 
+    background-color: #ff0000; /* Vermelho aceso */
+    box-shadow: inset 0px 3px 8px rgba(255, 0, 0, 1); /* Brilho interno mais forte */
+  }         
+  21%, 100% { 
+    background-color: #BB0000; /* Vermelho apagado */
+    box-shadow: inset 0px 3px 8px rgba(255, 0, 0, 0.3); /* Sombra interna mais suave */
+  }
 }
+
+@keyframes piscaAmarelo {
+  0%, 20% { background-color: #766500; }        /* Amarelo apagado */
+  21%, 50% { background-color: #ffff00; }       /* Amarelo aceso */
+  51%, 100% { background-color: #766500; }      /* Amarelo apagado */
+}
+
+@keyframes piscaVerde {
+  0%, 50% { background-color: #007722; }        /* Verde apagado */
+  51%, 80% { background-color: #00ff00; }       /* Verde aceso */
+  81%, 100% { background-color: #007722; }      /* Verde apagado */
+}
+
